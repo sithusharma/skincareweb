@@ -1,8 +1,26 @@
-  .home {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 100px;
-    font-family: "Arial", sans-serif;
-  }
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('../images/spa-background.jpg'); /* Replace with your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+
+
+
+/* Ensure content is readable and not hidden behind navbar */
+.content {
+  position: relative;
+  z-index: 2; /* Keep content above the background */
+  color: white; /* Ensure text is visible */
+  text-align: center;
+  padding-top: 100px; /* Push content below the navbar */
+}
+
+

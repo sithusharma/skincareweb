@@ -1,30 +1,89 @@
 nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f8f8f8;
-    padding: 15px 0;
-    text-align: center;
-    z-index: 1000;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent; /* Transparent background */
+  padding: 20px 50px; /* Space inside navbar */
+  text-align: center;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Title on the left, links on the right */
+  box-sizing: border-box;
+}
+
+/* Title on the left */
+.nav-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: black; 
+  pointer-events: none; /* Non-clickable */
+  white-space: nowrap; /* Prevents title from breaking into two lines */
+}
+
+/* Navigation links */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 40px; /* Increase spacing between items */
+  flex-wrap: wrap; /* Ensures wrapping instead of cutting off */
+}
+
+nav ul li {
+  display: inline;
+  white-space: nowrap; /* Ensures links don't wrap unexpectedly */
+}
+
+nav ul li a {
+  font-family: 'Lora', serif;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  padding: 10px 15px;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+nav ul li a:hover {
+  color: #f5a623;
+}
+
+/* Underline Animation */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Ensure navbar height doesn't cut off content */
+body {
+  padding-top: 90px; /* Adjust based on navbar height */
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 1024px) {
+  nav {
+      flex-direction: column; /* Stack title & links */
+      text-align: center;
+      padding: 20px;
   }
   
   nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+      flex-direction: column;
+      gap: 15px; /* Reduce spacing */
   }
-  
-  nav ul li {
-    display: inline;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-  }
+}
