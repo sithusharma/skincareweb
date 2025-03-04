@@ -1,9 +1,11 @@
 import React from 'react';
 import '../styles/Membership.css'
+import Navbar from '../components/Navbar';
 
 const Membership = () => {
   return (
     <div className="membership">
+      <Navbar></Navbar>
      <section id="third" className="main special">
         <header className="major">
           <h2>Special Membership Program</h2>

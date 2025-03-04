@@ -1,8 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Poiret+One&display=swap');
+
 .contact {
+    font-family: 'Lora', serif;
+    padding-top: 80px; /* Account for fixed navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fdfdfd;
+}
+
+.contact-container {
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
     width: 100%;
+    max-width: 500px;
+}
+
+h1, h2 {
+    font-family: 'Poiret One', cursive;
+    margin-bottom: 15px;
+    color: #4d4d4d;
+}
+
+p a {
+    color: #4d4d4d;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+p a:hover {
+    color: #a67c52;
+}
+
+/* Form */
+form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-top: 100px;
-    font-family: "Arial", sans-serif;
-  }
+    gap: 15px;
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+}
+
+input, select, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: 'Lora', serif;
+}
+
+/* Textarea specific */
+textarea {
+    resize: none;
+}
+
+/* Button */
+button {
+    padding: 12px;
+    background-color: #4d4d4d;
+    color: white;
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #a67c52;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 20px;
+        width: 90%;
+    }
+}

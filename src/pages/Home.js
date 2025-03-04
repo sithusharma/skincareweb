@@ -15,6 +15,7 @@ const Home = () => {
         </p>
 
         <div className="hero-menu">
+          <a href="/about" className="menu-link">About</a>
           <a href="/facials" className="menu-link">Facials</a>
           <a href="/waxing-threading" className="menu-link">Waxing & Threading</a>
           <a href="/healing" className="menu-link">Healing</a>

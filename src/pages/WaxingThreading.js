@@ -1,9 +1,11 @@
 import React from 'react';
 import '../styles/WaxingThreading.css'
+import Navbar from '../components/Navbar';
 
 const WaxingThreading = () => {
   return (
     <div className="waxingthreading">
+      <Navbar></Navbar>
       <section id="first" className="main special">
         <header className="major">
           <h2><strong>Waxing, Threading/Wax, Tinting</strong></h2>

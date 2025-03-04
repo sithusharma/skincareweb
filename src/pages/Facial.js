@@ -1,15 +1,13 @@
 import React from 'react';
 import '../styles/Facial.css';
+import Navbar from '../components/Navbar';
 
 const Facial = () => {
   return (
     <div className="facial">
+      <Navbar></Navbar>
       {/* Page Header with Branding */}
       <div className="facial-header">
-        <div className="facial-header-title">
-          <span className="header-top">Skin Care</span>
-          <span className="header-bottom">Beauty Spa</span>
-        </div>
         <div className="header-line"></div>
       </div>
 

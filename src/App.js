@@ -7,6 +7,7 @@ import Healing from './pages/Healing';
 import Membership from './pages/Membership';
 import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
+import About from './pages/About';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path="/healing" element={<Healing />} />
       <Route path="/membership" element={<Membership />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/about" element={<About />} />
     </Routes>
   </Router>
   );

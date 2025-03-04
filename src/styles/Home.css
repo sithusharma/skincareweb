@@ -152,32 +152,56 @@
     color: white;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-    }
+  .hero {
+      flex-direction: column;
+  }
 
-    .hero-content {
-        align-items: center;
-        text-align: center;
-        padding: 40px 20px;
-    }
+  .hero-content {
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+  }
 
-    .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-    }
+  .hero-menu {
+      display: flex;
+      flex-direction: column;  /* Stack links vertically */
+      width: 100%;
+      gap: 10px; /* Space between links */
+      align-items: center;  /* Center the links */
+  }
 
-    .btn, .btn-outline {
-        width: 80%;
-        max-width: 300px;
-    }
+  .menu-link {
+      width: 80%; /* Optional: take up more width */
+      max-width: 300px; /* Don't get too wide */
+      text-align: center;
+      padding: 12px 0; /* Taller links for easier tapping */
+      font-size: 16px; /* Slightly bigger font for touch screens */
+  }
 
-    .social-icons {
-        justify-content: center;
-        left: 0;
-        right: 0;
-    }
+  .hero-buttons {
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+  }
+
+  .btn, .btn-outline {
+      width: 80%;
+      max-width: 300px;
+  }
+
+  .social-icons {
+      justify-content: center;
+      left: 0;
+      right: 0;
+      position: relative; /* Take it out of absolute positioning if needed */
+      margin-top: 50px;
+  }
+
+  .subheading {
+      position: static;
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 14px;
+  }
 }

@@ -23,7 +23,7 @@
 /* Skin Care (larger) */
 .header-top {
     font-family: 'Poiret One', cursive;
-    font-size: 48px;
+    font-size: 30px;
     font-weight: bold;
     color: #4d4d4d;
     display: block;
@@ -32,21 +32,13 @@
 /* Beauty Spa (smaller) */
 .header-bottom {
     font-family: 'Lora', serif;
-    font-size: 20px;
+    font-size: 15px;
     color: #666;
     display: block;
     margin-top: -5px;
 }
 
-/* Horizontal Line */
-.header-line {
-    width: 100%;
-    max-width: 600px;
-    height: 1px;
-    background-color: #ccc;
-    position: relative;
-    margin-top: 10px;
-}
+
 
 /* Facials Title - just below the line */
 .facials-title {
