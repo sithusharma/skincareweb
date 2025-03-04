@@ -1,9 +1,20 @@
 import React from 'react';
-import '../styles/Facial.css'
+import '../styles/Facial.css';
 
 const Facial = () => {
   return (
     <div className="facial">
+      {/* Page Header with Branding */}
+      <div className="facial-header">
+        <div className="facial-header-title">
+          <span className="header-top">Skin Care</span>
+          <span className="header-bottom">Beauty Spa</span>
+        </div>
+        <div className="header-line"></div>
+      </div>
+
+      <h1 className="facials-title">Facials</h1>
+
       <section id="intro" className="main">
         <div className="spotlight">
           <div className="content">
@@ -28,6 +39,7 @@ const Facial = () => {
                 <tr><td>Dermaplaning</td><td>Vitae integer tempus condimentum.</td><td>$100</td></tr>
               </tbody>
             </table>
+
             <header className="major">
               <div className="table-container">
                 <h1>30 Minutes Facial Therapy</h1>

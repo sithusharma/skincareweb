@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Lora&display=swap');
+
 .facial {
     width: 100%;
     display: flex;
@@ -5,4 +7,81 @@
     align-items: center;
     padding-top: 100px;
     font-family: "Arial", sans-serif;
-  }
+}
+
+/* Header Container */
+.facial-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Skin Care (larger) */
+.header-top {
+    font-family: 'Poiret One', cursive;
+    font-size: 48px;
+    font-weight: bold;
+    color: #4d4d4d;
+    display: block;
+}
+
+/* Beauty Spa (smaller) */
+.header-bottom {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    color: #666;
+    display: block;
+    margin-top: -5px;
+}
+
+/* Horizontal Line */
+.header-line {
+    width: 100%;
+    max-width: 600px;
+    height: 1px;
+    background-color: #ccc;
+    position: relative;
+    margin-top: 10px;
+}
+
+/* Facials Title - just below the line */
+.facials-title {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #4d4d4d;
+    margin: 10px 0 30px;
+    text-transform: uppercase;
+}
+
+/* Rest of your existing styles can stay */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Advanced Therapy Section Header */
+h2.center {
+    text-align: center;
+    font-family: 'Lora', serif;
+}
+
+/* Optional: table container spacing if needed */
+.table-container {
+    margin-top: 30px;
+}
