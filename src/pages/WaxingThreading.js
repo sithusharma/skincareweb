@@ -1,77 +1,65 @@
 import React from 'react';
-import '../styles/WaxingThreading.css'
+import '../styles/WaxingThreading.css';
 import Navbar from '../components/Navbar';
 
 const WaxingThreading = () => {
+  const services = [
+    {
+      title: "Threading/Wax",
+      items: [
+        { name: "Eyebrows", description: "Precision eyebrow shaping.", price: "$15" },
+        { name: "Full Face", description: "Complete facial hair removal.", price: "$35" },
+        { name: "Side Burn", description: "Defined and clean look.", price: "$10" },
+        { name: "Chin", description: "Smooth and hair-free chin.", price: "$8" },
+        { name: "Upper Lip", description: "Gentle and effective hair removal.", price: "$8" }
+      ]
+    },
+    {
+      title: "Tinting",
+      items: [
+        { name: "Eyebrow", description: "Enhances eyebrow definition.", price: "$20" },
+        { name: "Eyelash", description: "Gives lashes a fuller look.", price: "$25" }
+      ]
+    },
+    {
+      title: "Waxing",
+      items: [
+        { name: "Underarms", description: "Smooth and clean underarms.", price: "$18" },
+        { name: "Full Arms", description: "Complete arm waxing.", price: "$35" },
+        { name: "Full Legs", description: "Complete leg waxing.", price: "$55" },
+        { name: "Half Legs", description: "Upper or lower leg waxing.", price: "$35" },
+        { name: "Bikini Line", description: "Gentle bikini area waxing.", price: "$35" },
+        { name: "Brazilian", description: "Full intimate area waxing.", price: "$55" },
+        { name: "Full Back", description: "Complete back waxing.", price: "$50" },
+        { name: "Half Back", description: "Upper or lower back waxing.", price: "$55" }
+      ]
+    }
+  ];
+
   return (
     <div className="waxingthreading">
-      <Navbar></Navbar>
-      <section id="first" className="main special">
+      <Navbar />
+      <section className="container">
         <header className="major">
-          <h2><strong>Waxing, Threading/Wax, Tinting</strong></h2>
+          <h2 className="title">Waxing, Threading & Tinting</h2>
         </header>
-        <ul className="features">
-          <li>
-            <h2>Threading/Wax</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Description</th>
-                  <th>Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>Eyebrows</td><td>Ante turpis integer aliquet porttitor.</td><td>$15</td></tr>
-                <tr><td>Full Face</td><td>Vis ac commodo adipiscing arcu aliquet.</td><td>$35</td></tr>
-                <tr><td>Side Burn</td><td>Morbi faucibus arcu accumsan lorem.</td><td>$10</td></tr>
-                <tr><td>Chin</td><td>Vitae integer tempus condimentum.</td><td>$8</td></tr>
-                <tr><td>Upper Lip</td><td>Ante turpis integer aliquet porttitor.</td><td>$8</td></tr>
-              </tbody>
-            </table>
-          </li>
-          <li>
-            <h2>Tinting</h2>
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Description</th>
-                  <th>Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>Eyebrow</td><td>Ante turpis integer aliquet porttitor.</td><td>$20</td></tr>
-                <tr><td>Eyelash</td><td>Vis ac commodo adipiscing arcu aliquet.</td><td>$25</td></tr>
-              </tbody>
-            </table>
-          </li>
-          <li>
-            <h3>Waxing</h3>
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Description</th>
-                  <th>Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>Underarms</td><td>Ante turpis integer aliquet porttitor.</td><td>$18</td></tr>
-                <tr><td>Full Arms</td><td>Vis ac commodo adipiscing arcu aliquet.</td><td>$35</td></tr>
-                <tr><td>Full Legs</td><td>Morbi faucibus arcu accumsan lorem.</td><td>$55</td></tr>
-                <tr><td>Half Legs</td><td>Vitae integer tempus condimentum.</td><td>$35</td></tr>
-                <tr><td>Bikini Line</td><td>Ante turpis integer aliquet porttitor.</td><td>$35</td></tr>
-                <tr><td>Brazilian</td><td>Ante turpis integer aliquet porttitor.</td><td>$55</td></tr>
-                <tr><td>Full Back</td><td>Vis ac commodo adipiscing arcu aliquet.</td><td>$50</td></tr>
-                <tr><td>Half Back</td><td>Morbi faucibus arcu accumsan lorem.</td><td>$55</td></tr>
-              </tbody>
-            </table>
-          </li>
-        </ul>
+        <div className="grid-container">
+          {services.map((service, index) => (
+            <div key={index} className="service-box">
+              <h3>{service.title}</h3>
+              <ul>
+                {service.items.map((item, i) => (
+                  <li key={i} className="service-item">
+                    <span className="service-name">{item.name}</span>
+                    <span className="service-description">{item.description}</span>
+                    <span className="service-price">{item.price}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </section>
-
-      
     </div>
   );
 };

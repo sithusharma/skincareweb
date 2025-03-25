@@ -1,8 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;700&display=swap');
+
 .waxingthreading {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 100px;
-    font-family: "Arial", sans-serif;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 20px 50px; /* Added horizontal padding for breathing room */
+  font-family: 'Montserrat', sans-serif;
+  animation: fadeIn 1s ease-in-out;
+  background-color: #f7f7f7; /* Subtle background to emphasize content */
+}
+
+/* Header Title */
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* CSS Grid Container for uniform service boxes */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Service Box Styling */
+.service-box {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Service Box Heading */
+.service-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #444;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+/* Service List Styling */
+.service-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1; /* Allow the list to fill the available space */
+}
+
+/* Service Item Styling */
+.service-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.3s ease;
+}
+
+.service-item:last-child {
+  border-bottom: none;
+}
+
+.service-item:hover {
+  background: #f9f9f9;
+}
+
+.service-name {
+  font-weight: bold;
+  color: #555;
+}
+
+.service-description {
+  font-style: italic;
+  color: #777;
+  margin: 5px 0;
+}
+
+.service-price {
+  color: #999;
+  text-align: right;
+  margin-top: 5px;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

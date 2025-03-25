@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Lora&display=swap');
+
+/* Common container styling for both Waxing/Threading and Membership pages */
+.waxingthreading,
 .membership {
     width: 100%;
     display: flex;
@@ -5,4 +9,71 @@
     align-items: center;
     padding-top: 100px;
     font-family: "Arial", sans-serif;
-  }
+}
+
+/* Header container styling for each page */
+.waxingthreading-header,
+.membership-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Larger header text (similar to "Skin Care") */
+.header-top {
+    font-family: 'Poiret One', cursive;
+    font-size: 30px;
+    font-weight: bold;
+    color: #4d4d4d;
+    display: block;
+}
+
+/* Smaller header text (similar to "Beauty Spa") */
+.header-bottom {
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    color: #666;
+    display: block;
+    margin-top: -5px;
+}
+
+/* Title styling for page-specific sections (if needed) */
+.page-title {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #4d4d4d;
+    margin: 10px 0 30px;
+    text-transform: uppercase;
+}
+
+/* Table styling (if used on these pages) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Advanced Section Header (if applicable) */
+h2.center {
+    text-align: center;
+    font-family: 'Lora', serif;
+}
+
+/* Optional container for table spacing */
+.table-container {
+    margin-top: 30px;
+}
