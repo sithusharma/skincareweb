@@ -6,7 +6,6 @@ import WaxingThreading from './pages/WaxingThreading';
 import Healing from './pages/Healing';
 import Membership from './pages/Membership';
 import Contact from './pages/Contact';
-import Navbar from './components/Navbar';
 import About from './pages/About';
 
 function App() {

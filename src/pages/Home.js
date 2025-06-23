@@ -8,7 +8,7 @@ const Home = () => {
       <div className="hero-image"></div>
       <div className="hero-content">
         <h2 className="subheading">Skincare Beauty Spa</h2>
-        <h1 className="main-heading">A Place for Relaxation & Self-Care</h1>
+        <h1 className="main-heading">A Place for Relaxation and Self-Care</h1>
         <p className="description">
           Indulge in luxury treatments designed to rejuvenate your skin and calm your mind.
           From facials to healing therapies, we tailor every experience to your unique needs.
