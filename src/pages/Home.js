@@ -19,7 +19,6 @@ const Home = () => {
           <a href="/facials" className="menu-link">Facials</a>
           <a href="/waxing-threading" className="menu-link">Waxing & Threading</a>
           <a href="/healing" className="menu-link">Healing</a>
-          <a href="/membership" className="menu-link">Membership</a>
           <a href="/contact" className="menu-link">Contact</a>
         </div>
 

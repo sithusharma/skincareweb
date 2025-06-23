@@ -1,108 +1,151 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;700&display=swap');
+/* src/styles/WaxingThreading.css */
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Lora&display=swap');
 
-.waxingthreading {
-  width: 100%;
+body {
+  margin: 0;
+  font-family: 'Lora', serif;
+  overflow-x: hidden;
+}
+
+.facial {
+  background: #fff;
+  color: #333;
+  padding-top: 80px;             /* nav offset */
+  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 20px 50px; /* Added horizontal padding for breathing room */
-  font-family: 'Montserrat', sans-serif;
-  animation: fadeIn 1s ease-in-out;
-  background-color: #f7f7f7; /* Subtle background to emphasize content */
+  background: url('../images/elegant-white-abstract-background.jpg');
+  background-size: cover;
 }
 
-/* Header Title */
-.title {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  color: #333;
-  margin-bottom: 40px;
+/* Header */
+.facial-header {
   text-align: center;
+  margin-bottom: 40px;
+}
+.facials-title {
+  font-family: 'Lora', serif;    /* switched to Lora */
+  font-size: 3rem;
+  color: #bfa145;
+  position: relative;
+  top: 5px;
+}
+.facials-subtitle {
+  position: relative;
+  top: 10px;
+  font-style: italic;
+  color: #777;
 }
 
-/* CSS Grid Container for uniform service boxes */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+/* Two-column layout */
+.facial-list {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  margin-top: -2rem;
+}
+.column {}
+
+/* Section headings */
+.section-heading {
+  font-family: 'Poiret One', cursive;
+  font-size: 2rem;
+  color: #bfa145;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #bfa145;
+  display: inline-block;
 }
 
-/* Service Box Styling */
-.service-box {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-/* Service Box Heading */
-.service-box h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
-  margin-bottom: 15px;
-  color: #444;
-  border-bottom: 1px solid #f0f0f0;
-  padding-bottom: 10px;
-}
-
-/* Service List Styling */
-.service-box ul {
+/* Item list */
+.glam-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  flex-grow: 1; /* Allow the list to fill the available space */
+}
+.glam-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+.glam-item:hover {
+  border-color: #bfa145;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.glam-name {
+  font-weight: 600;
+}
+.glam-price {
+  font-weight: 500;
+  color: #bfa145;
 }
 
-/* Service Item Styling */
-.service-item {
-  padding: 10px 0;
-  border-bottom: 1px solid #f0f0f0;
-  transition: background 0.3s ease;
+/* Modal */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
-
-.service-item:last-child {
-  border-bottom: none;
+.popup {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  text-align: center;
+  animation: popupFade 0.4s ease-in-out;
 }
-
-.service-item:hover {
-  background: #f9f9f9;
+@keyframes popupFade {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
-
-.service-name {
+.popup h2 {
+  font-family: 'Poiret One', cursive;
+  font-size: 1.75rem;
+  color: #bfa145;
+  margin-bottom: 1rem;
+}
+.popup p {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+.popup .price {
   font-weight: bold;
-  color: #555;
+  color: #bfa145;
+  font-size: 1.125rem;
 }
-
-.service-description {
-  font-style: italic;
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
   color: #777;
-  margin: 5px 0;
+  cursor: pointer;
+}
+.close-btn:hover {
+  color: #333;
 }
 
-.service-price {
-  color: #999;
-  text-align: right;
-  margin-top: 5px;
-}
-
-/* Fade In Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* Mobile */
+@media (max-width: 768px) {
+  .facial-list {
+    grid-template-columns: 1fr;
   }
 }

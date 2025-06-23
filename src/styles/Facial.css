@@ -1,79 +1,193 @@
+/* src/styles/Facial.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Lora&display=swap');
 
+body {
+  margin: 0;
+  font-family: 'Lora', serif;
+  overflow-x: hidden;
+}
+
 .facial {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 100px;
-    font-family: "Arial", sans-serif;
+  background: #fff url('../images/elegant-white-abstract-background.jpg') center/cover no-repeat;
+  color: #333;
+  padding-top: 80px;             /* nav height offset */
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Header Container */
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popupFade {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Header */
 .facial-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.2s;
 }
 
-/* Skin Care (larger) */
-.header-top {
-    font-family: 'Poiret One', cursive;
-    font-size: 30px;
-    font-weight: bold;
-    color: #4d4d4d;
-    display: block;
-}
-
-/* Beauty Spa (smaller) */
-.header-bottom {
-    font-family: 'Lora', serif;
-    font-size: 15px;
-    color: #666;
-    display: block;
-    margin-top: -5px;
-}
-
-
-
-/* Facials Title - just below the line */
+/* Title */
 .facials-title {
-    font-family: 'Lora', serif;
-    font-size: 28px;
-    font-weight: bold;
-    color: #4d4d4d;
-    margin: 10px 0 30px;
-    text-transform: uppercase;
+  font-family: 'Poiret One', cursive;
+  font-size: 3rem;
+  color: #bfa145;
+  position: relative;
+  top: 5px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.4s;
 }
 
-/* Rest of your existing styles can stay */
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+/* Subtitle */
+.facials-subtitle {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: #777;
+  position: relative;
+  margin-top: -2px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.6s;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
+/* Two-column list */
+.facial-list {
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  margin-top: -3rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.8s;
 }
 
-th, td {
-    padding: 10px;
-    text-align: left;
+.column {}
+
+/* Section headings */
+.section-heading {
+  font-family: 'Poiret One', cursive;
+  font-size: 2rem;
+  color: #bfa145;
+  margin-bottom: 1rem;
+  display: inline-block;
 }
 
-/* Advanced Therapy Section Header */
-h2.center {
-    text-align: center;
-    font-family: 'Lora', serif;
+/* Items */
+.glam-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* Optional: table container spacing if needed */
-.table-container {
-    margin-top: 30px;
+.glam-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.glam-item:hover {
+  border-color: #bfa145;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.glam-name {
+  font-weight: 600;
+}
+
+.glam-price {
+  font-weight: 500;
+  color: #bfa145;
+}
+
+/* Modal overlay */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Popup box */
+.popup {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  text-align: center;
+  animation: popupFade 0.4s ease-in-out forwards;
+}
+
+.popup h2 {
+  font-family: 'Poiret One', cursive;
+  font-size: 1.75rem;
+  color: #bfa145;
+  margin-bottom: 1rem;
+}
+
+.popup p {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.popup .price {
+  font-weight: bold;
+  color: #bfa145;
+  font-size: 1.125rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #777;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .facial-list {
+    grid-template-columns: 1fr;
+  }
 }

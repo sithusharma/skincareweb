@@ -1,79 +1,189 @@
+/* src/styles/Membership.css */
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Lora&display=swap');
 
-/* Common container styling for both Waxing/Threading and Membership pages */
-.waxingthreading,
-.membership {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 100px;
-    font-family: "Arial", sans-serif;
+body {
+  margin: 0;
+  font-family: 'Lora', serif;
+  overflow-x: hidden;
 }
 
-/* Header container styling for each page */
-.waxingthreading-header,
-.membership-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
+.facial {
+  background: #fff;
+  color: #333;
+  padding-top: 80px;             /* nav offset */
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url('../images/elegant-white-abstract-background.jpg');
+  background-size: cover;
 }
 
-/* Larger header text (similar to "Skin Care") */
-.header-top {
-    font-family: 'Poiret One', cursive;
-    font-size: 30px;
-    font-weight: bold;
-    color: #4d4d4d;
-    display: block;
+/* Header */
+.facial-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.facials-title {
+  font-family: 'Lora', serif;
+  font-size: 3rem;
+  color: #bfa145;
+  position: relative;
+  top: 5px;
+}
+.facials-subtitle {
+  position: relative;
+  top: 10px;
+  font-style: italic;
+  color: #777;
 }
 
-/* Smaller header text (similar to "Beauty Spa") */
-.header-bottom {
-    font-family: 'Lora', serif;
-    font-size: 15px;
-    color: #666;
-    display: block;
-    margin-top: -5px;
+/* Two-column layout */
+.facial-list {
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  margin-top: -2rem;
+  max-height: calc(100vh - 240px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.facial-list::-webkit-scrollbar {
+  width: 6px;
+}
+.facial-list::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
 }
 
-/* Title styling for page-specific sections (if needed) */
-.page-title {
-    font-family: 'Lora', serif;
-    font-size: 28px;
-    font-weight: bold;
-    color: #4d4d4d;
-    margin: 10px 0 30px;
-    text-transform: uppercase;
+.column {}
+
+/* Section headings */
+.section-heading {
+  font-family: 'Poiret One', cursive;
+  font-size: 2rem;
+  color: #bfa145;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #bfa145;
+  display: inline-block;
 }
 
-/* Table styling (if used on these pages) */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+/* Item list */
+.glam-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.glam-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+.glam-item:hover {
+  border-color: #bfa145;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.glam-name {
+  font-weight: 600;
+}
+.glam-price {
+  font-weight: 500;
+  color: #bfa145;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
+/* Modal */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.popup {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  text-align: center;
+  animation: popupFade 0.4s ease-in-out;
+}
+@keyframes popupFade {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.popup h2 {
+  font-family: 'Poiret One', cursive;
+  font-size: 1.75rem;
+  color: #bfa145;
+  margin-bottom: 1rem;
+}
+.popup p {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+.popup .price {
+  font-weight: bold;
+  color: #bfa145;
+  font-size: 1.125rem;
+}
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #777;
+  cursor: pointer;
+}
+.close-btn:hover {
+  color: #333;
 }
 
-th, td {
-    padding: 10px;
-    text-align: left;
+/* Mobile */
+@media (max-width: 768px) {
+  .facial-list {
+    grid-template-columns: 1fr;
+    max-height: none;
+    overflow-y: visible;
+    margin-top: 0;
+  }
 }
 
-/* Advanced Section Header (if applicable) */
-h2.center {
-    text-align: center;
-    font-family: 'Lora', serif;
+/* Center the two membership cards beneath the title */
+.membership .facial-list {
+  /* make exactly two columns sized to their content */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, auto));
+  gap: 3rem;
+
+  /* center the grid within its container */
+  justify-content: center;
+
+  /* preserve the scroll behavior you already have */
+  max-height: calc(100vh - 240px);
+  overflow-y: auto;
 }
 
-/* Optional container for table spacing */
-.table-container {
-    margin-top: 30px;
+/* ensure your header stays centered */
+.membership .facial-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
+

@@ -23,6 +23,8 @@
     animation: fadeInUp 1s ease-out forwards;  /* Animate on load */
 }
 
+
+
 /* Animation keyframes */
 @keyframes fadeInUp {
     to {
@@ -34,7 +36,7 @@
 /* Left side - Background Image */
 .hero-image {
     flex: 1;
-    background-image: url('../images/spa-background.jpg');
+    background-image: url('../images/spa1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

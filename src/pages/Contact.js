@@ -1,8 +1,9 @@
+// src/components/Contact.jsx
 import React, { useState } from 'react';
 import '../styles/Contact.css';
 import Navbar from '../components/Navbar';
 
-const Contact = () => {
+export default function Contact() {
   const [form, setForm] = useState({
     name: '',
     date: '',
@@ -12,94 +13,67 @@ const Contact = () => {
   });
 
   const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value
-    });
+    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const sendRequest = () => {
-    const phoneNumber = '+9803286913';  // Replace with actual spa phone number
-    const message = `
+  const sendRequest = (e) => {
+    e.preventDefault();
+    const phoneNumber = '+19803286913';  // Your spa number
+    const msg = `
 Appointment Request:
 - Name: ${form.name}
 - Date: ${form.date}
 - Time: ${form.time}
 - Service: ${form.service}
 - Message: ${form.message}`;
-
-    const smsLink = `sms:${phoneNumber}?body=${encodeURIComponent(message)}`;
-    window.location.href = smsLink;
+    window.location.href = `sms:${phoneNumber}?body=${encodeURIComponent(msg)}`;
   };
 
   return (
-    <div className="contact">
+    <div className="facial contact-page">
       <Navbar />
 
-      <div className="contact-container">
-        <h1>Contact Us</h1>
-        <p>📞 Phone: <a href="tel:+9803286913">+1 (980) 328-6913</a></p>
-        <p>📧 Email: <a href="mailto:info@skincarebeautyspa.com">info@skincarebeautyspa.com</a></p>
+      <header className="facial-header">
+        <h1 className="facials-title">Contact Us</h1>
+        <p className="facials-subtitle">Book your appointment or ask a question</p>
+      </header>
 
-        <h2>Request Appointment</h2>
+      <div className="contact-card">
+        <div className="contact-info">
+          <p>📞 <a href="tel:+19803286913">+1 (980) 328-6913</a></p>
+          <p>📧 <a href="mailto:info@skincarebeautyspa.com">info@skincarebeautyspa.com</a></p>
+        </div>
 
-        <form onSubmit={(e) => {e.preventDefault(); sendRequest();}}>
-          <label>Your Name:</label>
+        <form className="contact-form" onSubmit={sendRequest}>
           <input
-            type="text"
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-            required
-            placeholder="Enter your name"
+            type="text" name="name" placeholder="Your Name"
+            value={form.name} onChange={handleChange} required
           />
-
-          <label>Date:</label>
           <input
-            type="date"
-            name="date"
-            value={form.date}
-            onChange={handleChange}
-            required
+            type="date" name="date"
+            value={form.date} onChange={handleChange} required
           />
-
-          <label>Time:</label>
           <input
-            type="time"
-            name="time"
-            value={form.time}
-            onChange={handleChange}
-            required
+            type="time" name="time"
+            value={form.time} onChange={handleChange} required
           />
-
-          <label>Service:</label>
           <select
-            name="service"
-            value={form.service}
-            onChange={handleChange}
-            required
+            name="service" value={form.service}
+            onChange={handleChange} required
           >
-            <option value="">Select a service</option>
-            <option value="Facial">Facial</option>
-            <option value="Waxing & Threading">Waxing & Threading</option>
-            <option value="Healing">Healing</option>
-            <option value="Membership Inquiry">Membership Inquiry</option>
+            <option value="">Choose a service</option>
+            <option>Facial</option>
+            <option>Waxing &amp; Threading</option>
+            <option>Healing</option>
+            <option>Membership Inquiry</option>
           </select>
-
-          <label>Message (Optional):</label>
           <textarea
-            name="message"
-            value={form.message}
-            onChange={handleChange}
-            placeholder="Any special requests or questions?"
-            rows="4"
+            name="message" rows="4" placeholder="Additional requests (optional)"
+            value={form.message} onChange={handleChange}
           />
-
           <button type="submit">Send Request</button>
         </form>
       </div>
     </div>
   );
-};
-
-export default Contact;
+}
