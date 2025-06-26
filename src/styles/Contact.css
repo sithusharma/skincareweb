@@ -1,6 +1,4 @@
-/* src/styles/Contact.css */
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Lora&display=swap');
-
 
 body {
   margin: 0;
@@ -8,8 +6,26 @@ body {
   overflow-x: hidden;
 }
 
-.facial.contact-page {
-  background: #fff url('../images/elegant-white-abstract-background.jpg') center/cover no-repeat;
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-page {
+  background: #fff url('../images/elegant-white-abstract-background.jpg')
+              center/cover no-repeat;
   padding-top: 80px;               /* navbar offset */
   min-height: calc(100vh - 80px);
   display: flex;
@@ -17,26 +33,33 @@ body {
   align-items: center;
 }
 
-/* Header (reusing facials style) */
-.facial-header {
+/* Header */
+.contact-header {
   text-align: center;
   margin-bottom: 40px;
+
+  /* animate in */
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.2s;
 }
-.facials-title {
+
+.contact-title {
   font-family: 'Lora', serif;
   font-size: 3rem;
   color: #bfa145;
 }
-.facials-subtitle {
+
+.contact-subtitle {
   font-family: 'Poiret One', cursive;
   font-size: 1.25rem;
   color: #777;
-  margin-top: 8px;
+  margin-top: -20px;
 }
 
 /* Card containing both info & form */
 .contact-card {
-  background: #fff;
+  background: transparent;
   border: 1px solid #eee;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
@@ -44,17 +67,30 @@ body {
   width: 90%;
   padding: 2rem;
   box-sizing: border-box;
-  margin-bottom: 60px;
+  margin-top: -45px;
+  border-color: gold;
+
+  /* animate in */
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.4s;
 }
 
 /* Phone & email links */
 .contact-info {
   text-align: center;
   margin-bottom: 1.5rem;
+
+  /* animate in */
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+  animation-delay: 0.6s;
 }
+
 .contact-info p {
   margin: 0.5rem 0;
 }
+
 .contact-info a {
   color: #4d4d4d;
   text-decoration: none;
@@ -65,12 +101,20 @@ body {
   color: #a67c52;
 }
 
-/* Form fields */
+/* Form fields container */
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  /* animate in */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.8s;
 }
+
+/* Inputs, selects, textarea */
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
@@ -99,13 +143,24 @@ body {
   background: #a78e35;
 }
 
+/* Success / error messages */
+.success-msg,
+.error-msg {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+  animation-delay: 1.2s;
+  margin-top: 1rem;
+}
+
+.success-msg { color: green; }
+.error-msg   { color: red; }
+
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .contact-card {
     padding: 1.5rem;
   }
-  .facials-title {
+  .contact-title {
     font-size: 2.5rem;
   }
 }
-

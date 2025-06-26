@@ -1,4 +1,3 @@
-// src/components/Healing.jsx
 import React, { useState } from 'react';
 import '../styles/Healing.css';
 import Navbar from '../components/Navbar';
@@ -13,40 +12,40 @@ const services = [
 ];
 
 export default function Healing() {
-  const [popup, setPopup] = useState(null);
+  const [selectedService, setSelectedService] = useState(null);
 
   return (
-    <div className="facial healing-page">
+    <div className="healing-page">
       <Navbar />
 
-      <header className="facial-header">
-        <h1 className="facials-title">Healing</h1>
-        <p className="facials-subtitle">Holistic Therapies for Mind &amp; Body</p>
+      <header className="healing-header">
+        <h1 className="healing-title">Healing</h1>
+        <p className="healing-subtitle">Holistic Therapies for Mind &amp; Body</p>
       </header>
 
-      <main className="facial-list">
-        <div className="column">
-          <h2 className="section-heading">Our Healing Services</h2>
-          <ul className="glam-list">
-            {services.map((s,i) => (
+      <main className="healing-services">
+        <div className="healing-column">
+          <h2 className="healing-section-heading">Our Healing Services</h2>
+          <ul className="healing-services-list">
+            {services.map((service, index) => (
               <li
-                key={i}
-                className="glam-item"
-                onClick={() => setPopup(s)}
+                key={index}
+                className="healing-service-item"
+                onClick={() => setSelectedService(service)}
               >
-                <span className="glam-name">{s.name}</span>
+                <span className="healing-service-name">{service.name}</span>
               </li>
             ))}
           </ul>
         </div>
       </main>
 
-      {popup && (
-        <div className="popup-overlay" onClick={() => setPopup(null)}>
-          <div className="popup" onClick={e => e.stopPropagation()}>
-            <button className="close-btn" onClick={() => setPopup(null)}>×</button>
-            <h2>{popup.name}</h2>
-            <p>{popup.description}</p>
+      {selectedService && (
+        <div className="healing-popup-overlay" onClick={() => setSelectedService(null)}>
+          <div className="healing-popup" onClick={e => e.stopPropagation()}>
+            <button className="healing-close-btn" onClick={() => setSelectedService(null)}>×</button>
+            <h2 className="healing-popup-title">{selectedService.name}</h2>
+            <p className="healing-popup-description">{selectedService.description}</p>
           </div>
         </div>
       )}

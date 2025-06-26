@@ -1,4 +1,3 @@
-// src/components/Membership.jsx
 import React, { useState } from 'react';
 import '../styles/Membership.css';
 import Navbar from '../components/Navbar';
@@ -19,58 +18,60 @@ const plans = [
 ];
 
 export default function Membership() {
-  const [popup, setPopup] = useState(null);
+  const [selectedPlan, setSelectedPlan] = useState(null);
 
   return (
-    <div className="facial membership">
+    <div className="membership-page">
       <Navbar />
 
-      <header className="facial-header">
-        <h1 className="facials-title">Membership Program</h1>
-        <p className="facials-subtitle">
+      <header className="membership-header">
+        <h1 className="membership-title">Membership Program</h1>
+        <p className="membership-subtitle">
           Exclusive perks designed for your glowing journey
         </p>
       </header>
 
-      <main className="facial-list">
-        <div className="column">
-          <h2 className="section-heading">Our Plans & Benefits</h2>
-          <ul className="glam-list">
+      <main className="membership-list">
+        <div className="membership-column">
+          <h2 className="membership-section-heading">Our Plans & Benefits</h2>
+          <ul className="membership-plans-list">
             {plans.map((plan, i) => (
               <li
                 key={i}
-                className="glam-item"
-                onClick={() => setPopup(plan)}
+                className="membership-plan-item"
+                onClick={() => setSelectedPlan(plan)}
               >
-                <span className="glam-name">{plan.name}</span>
-                <span className="glam-price">{plan.price}</span>
+                <span className="membership-plan-name">{plan.name}</span>
+                <span className="membership-plan-price">{plan.price}</span>
               </li>
             ))}
           </ul>
         </div>
       </main>
 
-      {popup && (
+      {selectedPlan && (
         <div
-          className="popup-overlay"
-          onClick={() => setPopup(null)}
+          className="membership-popup-overlay"
+          onClick={() => setSelectedPlan(null)}
         >
           <div
-            className="popup"
+            className="membership-popup"
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              className="close-btn"
-              onClick={() => setPopup(null)}
+              className="membership-close-btn"
+              onClick={() => setSelectedPlan(null)}
             >
               ×
             </button>
-            <h2>{popup.name}</h2>
-            <p>{popup.description}</p>
-            <p className="price">{popup.price}</p>
+            <h2 className="membership-popup-title">{selectedPlan.name}</h2>
+            <p className="membership-popup-description">
+              {selectedPlan.description}
+            </p>
+            <p className="membership-popup-price">{selectedPlan.price}</p>
           </div>
         </div>
       )}
     </div>
-);
+  );
 }

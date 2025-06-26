@@ -1,45 +1,61 @@
-/* src/styles/WaxingThreading.css */
-@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Lora&display=swap');
-
 body {
   margin: 0;
   font-family: 'Lora', serif;
   overflow-x: hidden;
 }
 
-.facial {
-  background: #fff;
+.waxing-threading {
+  background: #fff url('../images/elegant-white-abstract-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   color: #333;
-  padding-top: 80px;             /* nav offset */
-  min-height: calc(100vh - 80px);
+  padding-top: 80px;
+  width: 100%;
+  box-sizing: border-box;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: url('../images/elegant-white-abstract-background.jpg');
-  background-size: cover;
 }
 
-/* Header */
-.facial-header {
+.waxing-threading-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.2s;
 }
-.facials-title {
-  font-family: 'Lora', serif;    /* switched to Lora */
+
+.waxing-threading-title {
+  font-family: 'Poiret One', cursive;
   font-size: 3rem;
   color: #bfa145;
   position: relative;
   top: 5px;
-}
-.facials-subtitle {
-  position: relative;
-  top: 10px;
-  font-style: italic;
-  color: #777;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.4s;
 }
 
-/* Two-column layout */
-.facial-list {
+.waxing-threading-subtitle {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: #777;
+  position: relative;
+  margin-top: -4px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+
+.waxing-threading-list {
   width: 100%;
   max-width: 1000px;
   display: grid;
@@ -47,12 +63,16 @@ body {
   gap: 3rem;
   padding: 0 1rem;
   box-sizing: border-box;
-  margin-top: -2rem;
+  margin-top: -3rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.8s;
 }
-.column {}
 
-/* Section headings */
-.section-heading {
+.waxing-threading-column {}
+
+.waxing-threading-section-heading {
   font-family: 'Poiret One', cursive;
   font-size: 2rem;
   color: #bfa145;
@@ -61,13 +81,13 @@ body {
   display: inline-block;
 }
 
-/* Item list */
-.glam-list {
+.waxing-threading-service-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.glam-item {
+
+.waxing-threading-service-item {
   display: flex;
   justify-content: space-between;
   padding: 1rem 1.5rem;
@@ -78,20 +98,22 @@ body {
   cursor: pointer;
   transition: box-shadow 0.3s, border-color 0.3s;
 }
-.glam-item:hover {
+
+.waxing-threading-service-item:hover {
   border-color: #bfa145;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-.glam-name {
+
+.waxing-threading-service-name {
   font-weight: 600;
 }
-.glam-price {
+
+.waxing-threading-service-price {
   font-weight: 500;
   color: #bfa145;
 }
 
-/* Modal */
-.popup-overlay {
+.waxing-threading-popup-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.6);
@@ -100,7 +122,8 @@ body {
   justify-content: center;
   z-index: 1000;
 }
-.popup {
+
+.waxing-threading-popup {
   background: #fff;
   border-radius: 20px;
   padding: 2rem;
@@ -110,26 +133,31 @@ body {
   text-align: center;
   animation: popupFade 0.4s ease-in-out;
 }
+
 @keyframes popupFade {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
-.popup h2 {
+
+.waxing-threading-popup h2 {
   font-family: 'Poiret One', cursive;
   font-size: 1.75rem;
   color: #bfa145;
   margin-bottom: 1rem;
 }
-.popup p {
+
+.waxing-threading-popup p {
   margin-bottom: 1rem;
   line-height: 1.4;
 }
-.popup .price {
+
+.waxing-threading-popup-price {
   font-weight: bold;
   color: #bfa145;
   font-size: 1.125rem;
 }
-.close-btn {
+
+.waxing-threading-close-btn {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -139,13 +167,24 @@ body {
   color: #777;
   cursor: pointer;
 }
-.close-btn:hover {
+
+.waxing-threading-close-btn:hover {
   color: #333;
 }
 
-/* Mobile */
 @media (max-width: 768px) {
-  .facial-list {
+  .waxing-threading-list {
     grid-template-columns: 1fr;
   }
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

@@ -23,9 +23,9 @@ export default function About() {
 
       <section className="about-intro">
         <p>
-          Hello! I’m Shivalika—a licensed esthetician passionate about bringing out your skin’s natural glow.
-          With over 15 years of experience, I specialize in bespoke facial treatments, dermaplaning,
-          and advanced skin rejuvenation techniques tailored just for you.
+          Hello! I’m Shivalika, a licensed esthetician passionate about bringing out your skin’s natural glow.
+          With over 15 years of experience, I specialize in facial treatments, dermaplaning,
+          and advanced skin rejuvenation techniques tailored just for you!
         </p>
       </section>
 
